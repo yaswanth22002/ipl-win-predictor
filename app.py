@@ -1,6 +1,7 @@
 import streamlit as st
 import pickle
 import pandas as pd
+import os
 
 st.set_page_config(page_title="IPL Win Predictor", page_icon="🏆", layout="wide")
 
@@ -51,7 +52,7 @@ cities = sorted([
 ])
 
 # ── LOAD MODEL ───────────────────────────────────────────────────────────────
-pipe = pickle.load(open('pipe.pkl', 'rb'))
+pipe = pickle.load(open(os.path.join(os.path.dirname(__file__), 'pipe.pkl'), 'rb'))
 
 # ════════════════════════════════════════════════════════════════════════════
 #  HEADER
